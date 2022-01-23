@@ -1,0 +1,42 @@
+<!-- search bar -->
+<div class="container search-bar mt-3">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-auto mr-auto">
+      <div class="search-bar-outer ">
+        <div class="search-bar-inner">
+          <form action="/search">
+            <div class="input-group">
+              <span class="mb-2 mr-2 align-self-end">尋找餐廳</span>
+              <input type="text" name="keyword" class="form-control" id="keyword" placeholder="輸入餐廳、分類"
+                aria-label="Restaurant Name..." value="{{ keyword }}" aria-describedby="search-button">
+              <div class="input-group-append">
+                <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="sort-selector align-self-center col-auto mr-5">
+      <form action="/sort" method="GET">
+        <select name="sort" id="sort-selector" onchange="submit()">
+          <option>請選擇排序方式</option>
+          <option value="A">A->Z</option>
+          <option value="Z">Z->A</option>
+          <option value="category">類別</option>
+          <option value="location">地區</option>
+        </select>
+      </form>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>
+<!-- restaurant list -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-10 col-12 mx-auto text-center">
+      <h3>查無相關餐廳資訊</h3>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+<h1 class="mb-1 restaurant-show-title">Add a restaurant</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 mx-auto">
+      <form action="/restaurants/new" method="POST" id="form" novalidate>
+        <div class="mb-1">
+          <p class="mb-1">
+            <span class="text-secondary">
+              <i class="fas fa-utensils pr-2"></i>
+              名稱：
+            </span>
+          </p>
+          <input type="text" id="name" name="name" size="30" required>
+          <span class="mark">*</span>
+          <div class="valid-feedback">
+            Good!
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-1">
+          <p class="mb-1">
+            <span class="text-secondary">
+              <i class="fas fa-utensils pr-2"></i>
+              英文名稱：
+            </span>
+          </p>
+          <input type="text" id="name_en" name="name_en" size="30">
+        </div>
+        <div class="mb-1">
+          <p class="mb-1">
+            <span class="text-secondary">
+              <i class="fas fa-utensils pr-2"></i>
+              類別：
+            </span>
+          </p>
+          <input list="categories" id="category" name="category" size="30" required>
+          <datalist id="categories">
+            <option value="中式料理"></option>
+            <option value="美式料理"></option>
+            <option value="韓式料理"></option>
+            <option value="日式料理"></option>
+            <option value="義式料理"></option>
+            <option value="法式料理"></option>
+            <option value="印度料理"></option>
+          </datalist>
+          <span class="mark">*</span>
+          <div class="valid-feedback">
+            Good!
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-1">
+          <p class="mb-1">
+            <span class="text-secondary">
+              <i class="fas fa-map-marker-alt pr-2"></i>
+              地址：
+            </span>
+          </p>
+          <input type="text" id="location" name="location" size="80" required>
+          <span class="mark">*</span>
+          <div class="valid-feedback">
+            Good!
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-1">
+          <p class="mb-1">
+            <span class="text-secondary">
+              <i class="fas fa-map-marked-alt pr-2 fa-xs"></i>
+              Google Map：
+            </span>
+          </p>
+          <input type="text" id="google_map" name="google_map" size="40" required>
+          <span class="mark">*</span>
+          <div class="valid-feedback">
+            Good!
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-1">
+          <p class="mb-1">
+            <span class="text-secondary">
+              <i class="fas fa-mobile-alt pr-2"></i>
+              電話：
+            </span>
+          </p>
+          <input type="text" id="phone" name="phone" size="30" required>
+          <span class="mark">*</span>
+          <div class="valid-feedback">
+            Good!
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-1">
+          <p class="mb-1">
+            <span class="text-secondary">
+              <i class="far fa-image"></i>
+              照片連結：
+            </span>
+          </p>
+          <input type="text" id="image" name="image" size="80" required>
+          <span class="mark">*</span>
+          <div class="valid-feedback">
+            Good!
+          </div>
+          <div class="invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="mb-1">
+          <p class="mb-1"><label for="description" class="text-secondary">描述：</label></p>
+          <textarea id="description" name="description" rows="10" cols="110">
+          </textarea>
+        </div>
+        <button type="submit" id="submit-btn" class="common-btn ml-4 mb-2">Add</button>
+        <a href="/" class="common-a-btn ml-3 ">Go Back</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/stylesheets/checkValid.css">
+<script src="/javascripts/checkValid.js"></script>
