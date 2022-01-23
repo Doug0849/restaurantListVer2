@@ -1,0 +1,28 @@
+form.was-validated input:invalid {
+  border: 1px solid red;
+  border-radius: 2px;
+}
+
+form.was-validated input:valid {
+  border: 1px solid green;
+  border-radius: 2px;
+}
+
+span.mark {
+  color: red;
+  margin-left: 5px;
+}
+
+.invisible {
+  display: none;
+}
+
+.invalid-feedback, .valid-feedback {
+  display: none;
+  font-size: 0.8em;
+}
+
+form.was-validated input:invalid ~ .invalid-feedback,
+form.was-validated input:valid ~ .valid-feedback {
+  display: initial;
+}
