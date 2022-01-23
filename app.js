@@ -1,15 +1,21 @@
 const express = require('express')
-const exphbs = require('express-handlebars')
 const app = express()
 const port = 3000
 
-app.get('/', (req,res) => {
-  res.send('This is Server')
-})
+const methodOverride = require('method-override')
+const routes = require('./routes')
 
-app.engine('hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs'}))
+require('./config/mongoose')
+
+const exphbs = require('express-handlebars')
+
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true })) //body-parser
+app.use(methodOverride('_method'))
+app.use(routes)
 
 app.listen(port, () => {
-  console.log('Server is running on https://localhost:3000')
+  console.log('Server is started on http://localhost:3000 ...')
 })
