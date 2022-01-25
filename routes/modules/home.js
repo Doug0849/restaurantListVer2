@@ -12,39 +12,14 @@ router.get('/', (req, res) => {
 })
 
 router.get('/sort', (req, res) => {
-  const sort = req.query.sort
-  if (sort === 'A'){
+  const [property, sortBy] = req.query.sort.split('_')
   Restaurants.find()
     .lean()
-    .sort({ name: 'asc' }) //asc(ascending)正序 desc(descending)反序
+    .sort({ [property]: sortBy }) //asc(ascending)正序 desc(descending)反序
     .then(restaurants => res.render('index', { restaurants }))
     .catch(error => console.log(error))
   }
-
-  if (sort === 'Z') {
-    Restaurants.find()
-      .lean()
-      .sort({ name: 'desc' }) //asc(ascending)正序 desc(descending)反序
-      .then(restaurants => res.render('index', { restaurants }))
-      .catch(error => console.log(error))
-  }
-
-  if (sort === 'category') {
-    Restaurants.find()
-      .lean()
-      .sort({ category: 'asc' }) //asc(ascending)正序 desc(descending)反序
-      .then(restaurants => res.render('index', { restaurants }))
-      .catch(error => console.log(error))
-  }
-
-  if (sort === 'location') {
-    Restaurants.find()
-      .lean()
-      .sort({ location: 'asc' }) //asc(ascending)正序 desc(descending)反序
-      .then(restaurants => res.render('index', { restaurants }))
-      .catch(error => console.log(error))
-  }
-})
+)
 
 
 router.get('/search', (req, res) => {

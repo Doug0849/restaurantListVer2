@@ -9,9 +9,7 @@ router.get('/new', (req, res) => {
 //為什麼放到後面就不能使用了?
 
 router.post('/new', (req, res) => {
-  const { name, name_en, category, location, google_map, phone, image, description } = req.body
-
-  return Restaurants.create({ name, name_en, category, location, google_map, phone, image, description })
+  return Restaurants.create(req.body)
     .then(() => res.redirect('/'))
 })
 
@@ -35,15 +33,8 @@ router.put('/:id', (req, res) => {
   const id = req.params.id
   const { name, name_en, category, location, google_map, phone, image, description } = req.body
   return Restaurants.findById(id)
-    .then(restaurant => {
-      restaurant.name = name
-      restaurant.name_en = name_en
-      restaurant.category = category
-      restaurant.location = location
-      restaurant.google_map = google_map
-      restaurant.phone = phone
-      restaurant.image = image
-      restaurant.description = description
+    .then(restaurant => { 
+      restaurant = Object.assign(restaurant, req.body)
       return restaurant.save()
     })
     .then(() => res.redirect(`/restaurants/${id}`))
