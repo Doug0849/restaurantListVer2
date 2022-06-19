@@ -63,7 +63,12 @@ cd restaurantListVer2
 在 Terminal 輸入 npm install -g nodemon 指令
 ```
 
-5. 匯入種子檔案
+5. 修改.env檔
+```
+將.env.sample檔的副檔名拿掉改為.env檔
+```
+
+6. 匯入種子檔案
 
 ```
 執行 npm run seed 匯入初始餐廳資料
@@ -76,26 +81,26 @@ mongodb connected
 seeds create finished.
 ```
 
-6. 執行npm腳本，啟動伺服器
+7. 執行npm腳本，啟動伺服器
 
 ```
 在 Terminal 輸入 npm run dev 指令
 ```
 
-7. 當 terminal 出現以下字樣，表示伺服器與資料庫已啟動並成功連結
+8. 當 terminal 出現以下字樣，表示伺服器與資料庫已啟動並成功連結
 
 ```
 Server is started on http://localhost:3000 ...
 mongodb connected
 ```
 
-8.現在可以開啟任一瀏覽器瀏覽器輸入 [http://localhost:3000](http://localhost:3000) 開始使用美食網頁清單2.0囉！
+9. 現在可以開啟任一瀏覽器瀏覽器輸入 [http://localhost:3000](http://localhost:3000) 開始使用美食網頁清單2.0囉！
 
-9.可以使用種子帳號來做測試：
+10. 可以使用種子帳號來做測試：
   email: user1@example.com 密碼:12345678
   email: user2@example.com 密碼:12345678
   
-10. 目前登入後的餐廳查詢功能尚未建置完成
+11. 目前登入後的餐廳查詢功能尚未建置完成
 
 ## doug0849 - 專案開發練習人員
 > [Doug](https://github.com/doug0849)
