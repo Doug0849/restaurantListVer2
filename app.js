@@ -1,20 +1,32 @@
 const express = require('express')
-const app = express()
-const port = 3000
-
+const session = require('express-session')
+const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
+
 const routes = require('./routes')
+const usePassport = require('./config/passport')
 
 require('./config/mongoose')
 
-const exphbs = require('express-handlebars')
+const app = express()
+const port = process.env.PORT || 3000
 
 app.engine('hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs' }))
-
 app.set('view engine', 'hbs')
+
 app.use(express.static('public'))
+
+app.use(session({
+  secret: 'ThisIsSecret',
+  resave: false,
+  saveUninitialized: true,
+}))
+
 app.use(express.urlencoded({ extended: true })) //body-parser
 app.use(methodOverride('_method'))
+
+usePassport(app)
+
 app.use(routes)
 
 app.listen(port, () => {
