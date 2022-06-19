@@ -14,7 +14,8 @@ router.get('/', (req, res) => {
 
 router.get('/sort', (req, res) => {
   const [property, sortBy] = req.query.sort.split('_')
-  Restaurants.find()
+  const userId = req.user._id
+  Restaurants.find({ userId })
     .lean()
     .sort({ [property]: sortBy }) //asc(ascending)正序 desc(descending)反序
     .then(restaurants => res.render('index', { restaurants }))
@@ -26,11 +27,13 @@ router.get('/sort', (req, res) => {
 router.get('/search', (req, res) => {
   const keyword = req.query.keyword
   const reg = new RegExp(keyword, 'i')
+  const userId = req.user._id
 
   Restaurants.find({
     $or: [
       { name: { $regex: reg } },
       { category: { $regex: reg } },
+      { userId }
     ]
   })
     .lean()
