@@ -57,11 +57,8 @@
               <div class="d-flex justify-content-end">
                 <a href="/restaurants/{{this._id}}" class="common-a-btn ml-1">Details</a>
                 <a href="/restaurants/{{this._id}}/edit" class="common-a-btn ml-1 ">Edit</a>
-                <form action="/restaurants/{{this._id}}?_method=DELETE" method="POST">
-                  <button type="submit" onclick="confirm('Are you sure to delete {{this.name}} ?')"
-                    class="delete-btn ml-1">
-                    Delete
-                  </button>
+                <form action="/restaurants/{{this._id}}?_method=DELETE" method="POST" onSubmit="return CheckForm()">
+                  <button type="submit" class="delete-btn ml-1"> Delete </button>
                 </form>
               </div>
             </div>
@@ -74,3 +71,4 @@
 </div>
 
 <script src="/javascripts/searchCheckValid.js"></script>
+<script src="/javascripts/checkDelete.js"></script>
