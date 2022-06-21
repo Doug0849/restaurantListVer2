@@ -17,26 +17,6 @@
 11. 使用者可以修改一家餐廳的資訊
 12. 使用者可以刪除一家餐廳
 
-## Environment SetUp - 環境建置
-
-1. [MongoDB v4.0 以上](https://www.mongodb.com/download-center/community)
-2. [Node.js](https://nodejs.org/en/)
-3. [Exepress]
-4. [Handlebars]
-6. [mongoose]
-7. [nodemon]
-8. [bcryptjs]
-9. [connect-flash]
-10. [dotenv]
-11. [express]
-12. [express-handlebars]
-13. [express-session]
-14. [method-override]
-15. [mongoose]
-16. [passport]
-17. [passport-facebook]
-18. [passport-local]
-
 ## Installing - 專案安裝流程
 
 1. 打開你的 terminal，Clone 此專案至本機電腦
